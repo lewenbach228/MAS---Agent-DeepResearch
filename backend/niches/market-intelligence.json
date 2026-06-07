@@ -1,0 +1,18 @@
+{
+  "id": "market-intelligence",
+  "name": "Analyse de Marché",
+  "command": "analyze",
+  "description": "Analyse concurrentielle et tendances d'un marché",
+  "emoji": "📊",
+  "format": [
+    "Résumé exécutif (3 lignes max)",
+    "Taille du marché + croissance estimée",
+    "Acteurs clés (3-5, avec positionnement)",
+    "Tendances (3, avec preuves chiffrées)",
+    "Opportunités (2-3)",
+    "Risques (2-3)",
+    "Sources"
+  ],
+  "promptSystem": "Tu es un analyste market intelligence senior. Pour chaque sujet, produis un rapport structuré avec les sections ci-dessus en français. Donne des chiffres précis avec dates. Priorise les sources récentes (< 6 mois). Sois direct, pas de blabla. Chaque affirmation doit être sourcée.",
+  "maxIterations": 3
+}

@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "NicheConfig",
+  "description": "Format d'un fichier de configuration de niche. Chaque fichier JSON dans backend/niches/ definit une niche métier que le bot Discord peut exécuter.",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "command",
+    "description",
+    "emoji",
+    "format",
+    "promptSystem",
+    "maxIterations"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Identifiant unique de la niche (ex: market-intelligence)",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "name": {
+      "type": "string",
+      "description": "Nom lisible pour l'utilisateur (ex: Analyse de Marché)"
+    },
+    "command": {
+      "type": "string",
+      "description": "Commande Discord associée (ex: analyze → /analyze)",
+      "pattern": "^[a-z]+$"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description courte affichée dans la commande /niches"
+    },
+    "emoji": {
+      "type": "string",
+      "description": "Emoji représentant la niche"
+    },
+    "format": {
+      "type": "array",
+      "description": "Liste ordonnée des sections du rapport final",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "promptSystem": {
+      "type": "string",
+      "description": "Prompt système pour guider le comportement du LLM lors de la génération du rapport"
+    },
+    "maxIterations": {
+      "type": "integer",
+      "description": "Nombre maximum d'itérations de recherche si la couverture est insuffisante",
+      "minimum": 1,
+      "maximum": 10
+    }
+  },
+  "examples": [
+    {
+      "id": "market-intelligence",
+      "name": "Analyse de Marché",
+      "command": "analyze",
+      "description": "Analyse concurrentielle et tendances d'un marché",
+      "emoji": "📊",
+      "format": [
+        "Résumé exécutif (3 lignes max)",
+        "Taille du marché + croissance estimée",
+        "Acteurs clés (3-5, avec positionnement)",
+        "Tendances (3, avec preuves chiffrées)",
+        "Opportunités (2-3)",
+        "Risques (2-3)",
+        "Sources"
+      ],
+      "promptSystem": "Tu es un analyste market intelligence...",
+      "maxIterations": 3
+    }
+  ]
+}

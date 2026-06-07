@@ -1,0 +1,28 @@
+{
+  "name": "deepresearch-agent-backend",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Backend du DeepResearch Agent — Express + Discord bot + Agent Engine",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "vitest run",
+    "test:local": "tsx scripts/test-local.ts"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.8.1",
+    "discord.js": "^14.18.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.15.3",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.3",
+    "vitest": "^4.1.6"
+  }
+}
