@@ -20,5 +20,14 @@ coverage/
 *.log
 
 # Internal strategy docs are private by default in duplicated public projects.
-# Remove this line only if the project repo is intentionally private or template-only.
 .internal/
+
+# OpenCode project scaffolding (not part of this project)
+.opencode/
+opencode.json
+
+# Build artifacts
+dist/
+docs/
+scripts/
+public/
