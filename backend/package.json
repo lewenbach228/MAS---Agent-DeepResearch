@@ -8,8 +8,7 @@
     "dev": "tsx watch src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js",
-    "test": "vitest run",
-    "test:local": "tsx scripts/test-local.ts"
+    "test": "vitest run"
   },
   "dependencies": {
     "better-sqlite3": "^11.8.1",
